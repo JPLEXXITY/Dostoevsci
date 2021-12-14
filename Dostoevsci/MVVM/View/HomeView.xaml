@@ -1,0 +1,179 @@
+﻿<UserControl x:Class="Dostoevsci.MVVM.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Dostoevsci.MVVM.View" xmlns:viewmodel="clr-namespace:Dostoevsci.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <TextBlock Text="Dostoevsky"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"/>
+
+        <StackPanel Orientation="Horizontal">
+            <Border Width="400"
+                    Height="200">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                        <GradientStop Color="Khaki" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,400,200"/>
+                </Border.Clip>
+
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="К 200 летию&#x0a;Ф.М.Достоевского"
+                                   Foreground="White"
+                                   FontSize="28"
+                                   Margin="20,10,10,0"/>
+
+                        <TextBlock Text="Программа к Декаде"
+                                   Foreground="White"
+                                   FontSize="18"
+                                   Margin="20,10,10,0"/>
+                    </StackPanel>
+
+                    <Image Width="230"
+                           Height="230"
+                           Source="/Image/Dostoevski_IMAGE.png"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Bottom" Margin="0,-19,-24,-11" ></Image>
+
+                </Grid>
+            </Border>
+
+            <Border Width="200"
+                    Height="200"
+                    CornerRadius="10"
+                    Margin="45,0,0,0">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#ffb73a" Offset="0.0"/>
+                        <GradientStop Color="DeepSkyBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Grid>
+                    
+                    <TextBlock Text="ПРИРОДА КАК ЦЕННОСТЬ В НАСЛЕДИИ&#x0a;             Ф. М. ДОСТОЕВСКОГО"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               FontSize="10"
+                               VerticalAlignment="Bottom"
+                               Margin="0,0,0,160"></TextBlock>
+                    <Image Source="/Dostoevsci;component/достоевский.png"
+                           Margin="0,2,0,-37"
+                           Height="160"/>
+                   
+                </Grid>
+            </Border>
+        </StackPanel>
+
+        <StackPanel>
+
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="15,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+
+            <TextBlock Text="Главные произведения"
+                   Foreground="White"
+                   FontSize="20"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,1">
+                <Border Width="150"
+                        Height="150"
+                        Background="#844eff"
+                        CornerRadius="10"
+                        Margin="0">
+                    <Grid>
+                        <TextBlock Text="Преступление&#x0a; и наказание"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Bottom"
+                                   Margin="10"
+                                   FontSize="15"></TextBlock>
+
+                        <Image Source="/Image/Image2.png"
+                               Height="90"
+                               Margin="0,0,0,40"></Image>
+
+                    </Grid>
+                </Border>
+
+                <Border Width="150"
+                        Height="150"
+                        Background="#4e99ff"
+                        CornerRadius="10">
+                    <Grid>
+                        <TextBlock Text="Идиот"
+                                   FontSize="15"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Bottom"
+                                   Margin="0,0,0,20"></TextBlock>
+
+                        <Image Source="/Image/Image5.png"
+                               Height="92"
+                               Margin="0,0,0,30"></Image>
+                    </Grid>
+                </Border>
+
+                <Border Width="150"
+                        Height="150"
+                        Background="#4eff91"
+                        CornerRadius="10">
+                    <Grid>
+                        <TextBlock Text="Бесы"
+                                   FontSize="15"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Bottom"
+                                   Margin="0,0,0,20"></TextBlock>
+
+                        <Image Source="/Image/Image6.png"
+                               Height="92"
+                               Margin="0,0,0,30"></Image>
+                    </Grid>
+                </Border>
+
+                <Border Width="150"
+                        Height="150"
+                        Background="Orange"
+                        CornerRadius="10">
+                    <Grid>
+                        <TextBlock Text="Братья Карамазовы"
+                                   FontSize="15"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Bottom"
+                                   Margin="0,0,0,20"></TextBlock>
+
+                        <Image Source="/Image/Image7.png"
+                               Height="92"
+                               Margin="0,0,0,30"></Image>
+
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+
+
+    </StackPanel>
+
+</UserControl>

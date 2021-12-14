@@ -1,0 +1,142 @@
+﻿<Window x:Class="Dostoevsci.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dostoevsci"
+        xmlns:viewModel="clr-namespace:Dostoevsci.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="600"
+        Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
+
+    <Border Background="#272537"
+            CornerRadius="20">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Textbook"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="White"
+                   FontSize="22"
+                   Margin="20,0,0,0"
+                   MouseDown="Grid_MouseDown">
+            </TextBlock>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Главное"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"></RadioButton>
+                <RadioButton Content="Биография"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding DiscoveryViewCommand}"></RadioButton>
+                <RadioButton Content="Произведения"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding FeaturedViewCommand}"></RadioButton>
+                <RadioButton Content="Фотография"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding FeaturedViewCommand}"></RadioButton>
+            </StackPanel>
+
+            <TextBox Width="250"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Grid.Column="1"
+                     Style="{StaticResource ModernTextbox}"></TextBox>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+
+            <TextBlock Text="Выход"                   
+                       Foreground="White"
+                       FontSize="20"
+                       Margin="0,0,30,0"
+                       Grid.Column="1" 
+                       Height="40" 
+                       Width="80"
+                       HorizontalAlignment="Right">
+
+
+            </TextBlock>
+
+            <Button Grid.Column="1" 
+                    Height="25" 
+                    Width="60"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,50,10"
+                    BorderThickness="0"
+                    Opacity="0"
+                    Foreground="White"
+                    FontSize="30" Click="Button_Click">
+            </Button>
+
+            <TextBlock Text="Свернуть"                   
+                       Foreground="White"
+                       FontSize="20"
+                       Margin="0,0,130,0"
+                       Grid.Column="1" 
+                       Height="40" 
+                       HorizontalAlignment="Right">
+
+
+            </TextBlock>
+
+            <Button Grid.Column="1" 
+                    Height="25" 
+                    Width="87"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,129,5"
+                    BorderThickness="0"
+                    Click="Button_Click_1"
+                    Opacity="0">
+            </Button>
+
+            <Button Opacity="0"
+                    x:Name="AboutBut"
+                    Click="About_Click"
+                    Margin="0,67,65,0" 
+                    Grid.Column="1" 
+                    Grid.Row="1"
+                    Height="200"
+                    Width="200"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"></Button>
+        </Grid>
+
+    </Border>
+
+</Window>
